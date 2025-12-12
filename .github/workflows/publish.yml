@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-
-      - name: Setup NPM Token
+          
+      - name: Set up npm auth
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Install dependencies
