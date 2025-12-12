@@ -1,0 +1,34 @@
+name: Auto Publish NPM
+
+on:
+  push:
+    paths:
+      - version.txt
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Setup NPM Token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build / Prepare
+        run: |
+          echo "Building or compiling if needed"
+
+      - name: Publish to NPM
+        run: npm publish
+
+      - name: Clean up
+        run: rm ~/.npmrc
