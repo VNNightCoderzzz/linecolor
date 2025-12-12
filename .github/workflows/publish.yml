@@ -3,7 +3,7 @@ name: Auto Publish NPM
 on:
   push:
     paths:
-      - version.txt
+      - numberoftimesbuild.txt
 
 jobs:
   publish:
