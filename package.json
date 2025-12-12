@@ -1,0 +1,17 @@
+{
+  "name": "linecolor",
+  "version": "1.0.11",
+  "description": "A Node.js Package Terminal Colored text using Linecolor",
+  "main": "src/index.js",
+  "type": "module",
+  "author": "VNNightCoderzzz",
+  "keywords": [
+    "console",
+    "colors",
+    "hex",
+    "hsl",
+    "rgb",
+    "terminal"
+  ],
+  "license": "MIT"
+}
